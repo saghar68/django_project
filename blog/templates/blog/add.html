@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+{% block title %}add post{% endblock title %}
+
+{% block context %}
+{% load crispy_forms_tags %}
+
+<div class="main-wrapper">  
+    <section class="blog-list px-3 py-5 p-md-5">
+        <div class="container">
+         <div class="item mb-5">
+          <div class="media-body">
+            <div class="mb-3">
+              <h1 style="color:primary;">Add New Post :</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{forms|crispy}}
+                  <br>     
+                <button type="submit" class="btn btn-primary mb-3">Send</button>
+              </form>
+              </div><br>
+             </div><!--//media-body-->   
+            </div><!--//item-->
+                </div><!--//media-->
+            </div><!--//item--> 
+          
+{% endblock context %}           
+

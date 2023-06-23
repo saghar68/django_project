@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+{% block title %}home{% endblock title %}
+
+{% block context %}
+<div class="main-wrapper">  
+    <section class="blog-list px-3 py-5 p-md-5">
+        <div class="container">
+            <div class="item mb-5">
+                    <div class="media-body">
+                        <h3 class="title mb-1"; style="color:green;">{{posts.title}}</h3>
+                        <hr>
+                    </div>
+                    <div class="intro">{{posts.text}}</div><br>
+                    <div class="meta mb-1"><b style="color:green;">date: </b><span class="date">{{posts.date_modified}}</span>
+                        <b style="color:green;">Topic: </b><span class="time">{{posts.about}}</span>
+                        <b style="color:green;">Author: </b><span class="comment">{{posts.author}}</span><br>
+                        <a class="more-link" href="{% url 'home' %}">Go back Home &rarr;</a> 
+                    <hr>
+                    <div class="d-grid gap-2 d-md-block">
+                        <a href="{% url 'edit' posts.id %}"class="btn btn-success me-me-2">Edit</a>
+                        <a href="{% url 'delete' posts.id %}"class="btn btn-danger">Delete</a>
+                      </div>
+                    </div><!--//media-body-->
+            </div><!--//item-->
+                </div><!--//media-->
+            </div><!--//item-->  
+            
+            
+{% endblock context %}
+
