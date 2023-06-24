@@ -4,6 +4,13 @@ from django.shortcuts import get_object_or_404
 #from django.contrib.auth.models import User
 from .forms import New_Post,Search_form
 from django.db.models import Q
+#from django.views import generic
+
+# class Post_List(generic.ListView):
+#     model=Post
+#     template_name='blog/home.html'
+#     context_object_name='posts'
+
 
 
 def Post_list(request):
