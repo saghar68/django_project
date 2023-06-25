@@ -1,21 +1,22 @@
 {% extends "_base.html" %}
-{% block title %}add post{% endblock title %}
+{% block title %}delete {{post.title}}{{post.title}}{% endblock title %}
 
 {% block context %}
 {% load crispy_forms_tags %}
 
 <div class="main-wrapper">  
+    
     <section class="blog-list px-3 py-5 p-md-5">
         <div class="container">
          <div class="item mb-5">
           <div class="media-body">
             <div class="mb-3">
-              <h1 style="color:primary;">Add New Post :</h1>
-                <form method="POST">
+              <form method="POST" method='GET' style='border:solid red; padding:20px; border-width:2px 3px 2px 3px;border-radius:10px;width:700px;margin:5px;'>
+                  <h3>are you sure to delete this post<b style="color:red;">({{post.title}})?</b></h3>
                     {% csrf_token %}
-                    {{form|crispy}}
+                    
                   <br>     
-                <button type="submit" class="btn btn-primary mb-3">Send</button>
+                <button type="submit" class="btn btn-danger" value="yes delete this post!">yes delete this post!</button>
               </form>
               </div><br>
              </div><!--//media-body-->   
